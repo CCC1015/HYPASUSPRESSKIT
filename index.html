@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HYPASUS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #020617;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3 { font-family: 'Orbitron', sans-serif; }
+    section { padding: 80px 10%; position: relative; }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: radial-gradient(circle at center, rgba(0,229,255,0.15), transparent);
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      letter-spacing: 4px;
+      text-shadow: 0 0 20px #00e5ff;
+    }
+
+    .tagline { margin-top: 20px; opacity: 0.8; }
+
+    .glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: #00e5ff;
+      filter: blur(200px);
+      opacity: 0.2;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-50px); }
+      100% { transform: translateY(0); }
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 20px;
+    }
+
+    .section-title { font-size: 32px; margin-bottom: 20px; }
+
+    .music, .videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(0,229,255,0.3);
+    }
+
+    iframe {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 14px;
+      opacity: 0.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      border: 1px solid #00e5ff;
+      border-radius: 50px;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #00e5ff;
+      color: black;
+    }
+
+    @media(max-width: 900px) {
+      .about { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 42px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="glow" style="top:10%; left:20%"></div>
+<div class="glow" style="bottom:10%; right:20%"></div>
+
+<section class="hero">
+  <div>
+    <h1>HYPASUS</h1>
+    <p class="tagline">Future rave energy — built for peak time</p>
+    <a href="#music" class="btn">Listen Now</a>
+  </div>
+</section>
+
+<section class="about">
+  <img src="https://gold-joint-warbler-618.mypinata.cloud/ipfs/bafybeiesqnwpu73i7ze6jjtpswd5sdi2x2sxguvehlhpl5w4n2fpml7gvq" alt="artist">
+  <div>
+    <h2 class="section-title">About</h2>
+    <p>
+      HYPASUS is a DJ and producer blending trance, techno, hard dance and groove-driven house into high-energy sets designed for modern dancefloors.
+      His sound is defined by emotional builds, hypnotic rhythms and explosive drops.
+    </p>
+  </div>
+</section>
+
+<section id="music">
+  <h2 class="section-title">Latest Music</h2>
+  <div class="music">
+
+    <div class="card">
+      <h3>Spotify Release</h3>
+      <iframe src="https://open.spotify.com/embed/track/11dFghVXANMlKmJXsNCbNl" height="80" frameborder="0" allow="encrypted-media"></iframe>
+    </div>
+
+    <div class="card">
+      <h3>SoundCloud Track</h3>
+      <iframe height="120" scrolling="no" frameborder="no" allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/308077027"></iframe>
+    </div>
+
+    <div class="card">
+      <h3>Spotify Playlist</h3>
+      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6" height="80" frameborder="0" allow="encrypted-media"></iframe>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Live / Videos</h2>
+  <div class="videos">
+    <div class="card">DJ Set Video</div>
+    <div class="card">Crowd Clip</div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Booking</h2>
+  <p>Email: hypasus.nl@gmail.com</p>
+  <a class="btn">Contact</a>
+</section>
+
+<div class="footer">
+  © 2026 HYPASUS — All Rights Reserved
+</div>
+
+</body>
+</html>
