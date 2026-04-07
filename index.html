@@ -13,10 +13,9 @@
       color: white;
       overflow-x: hidden;
     }
-
     h1,h2,h3 { font-family: 'Orbitron', sans-serif; }
     section { padding: 80px 10%; position: relative; }
-
+    
     .hero {
       height: 100vh;
       display: flex;
@@ -25,13 +24,11 @@
       text-align: center;
       background: radial-gradient(circle at center, rgba(0,229,255,0.15), transparent);
     }
-
     .hero h1 {
       font-size: 64px;
       letter-spacing: 4px;
       text-shadow: 0 0 20px #00e5ff;
     }
-
     .tagline { margin-top: 20px; opacity: 0.8; }
 
     .glow {
@@ -43,7 +40,6 @@
       opacity: 0.2;
       animation: float 6s infinite ease-in-out;
     }
-
     @keyframes float {
       0% { transform: translateY(0); }
       50% { transform: translateY(-50px); }
@@ -56,18 +52,21 @@
       gap: 40px;
       align-items: center;
     }
-
     .about img {
       width: 100%;
       border-radius: 20px;
     }
 
-    .section-title { font-size: 32px; margin-bottom: 20px; }
+    .section-title { 
+      font-size: 32px; 
+      margin-bottom: 30px; 
+      text-align: center;
+    }
 
-    .music, .videos {
+    .music, .videos, .promo-photos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
     .card {
@@ -76,11 +75,44 @@
       border-radius: 16px;
       backdrop-filter: blur(10px);
       transition: 0.3s;
+      text-align: center;
     }
-
     .card:hover {
       transform: translateY(-10px);
       box-shadow: 0 0 20px rgba(0,229,255,0.3);
+    }
+
+    .promo-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+    .promo-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: 0.4s;
+    }
+    .promo-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 28px;
+      background: transparent;
+      border: 1px solid #00e5ff;
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .download-btn:hover {
+      background: #00e5ff;
+      color: black;
     }
 
     iframe {
@@ -106,7 +138,6 @@
       color: white;
       transition: 0.3s;
     }
-
     .btn:hover {
       background: #00e5ff;
       color: black;
@@ -119,7 +150,6 @@
   </style>
 </head>
 <body>
-
 <div class="glow" style="top:10%; left:20%"></div>
 <div class="glow" style="bottom:10%; right:20%"></div>
 
@@ -145,22 +175,22 @@
 <section id="music">
   <h2 class="section-title">Latest Music</h2>
   <div class="music">
-
     <div class="card">
       <h3>Spotify Release</h3>
       <iframe src="https://open.spotify.com/embed/track/11dFghVXANMlKmJXsNCbNl" height="80" frameborder="0" allow="encrypted-media"></iframe>
     </div>
-
     <div class="card">
       <h3>SoundCloud Track</h3>
       <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2289213842&color=%23545c68&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-      <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ueberrest" title="Ueberrest" target="_blank" style="color: #cccccc; text-decoration: none;">Ueberrest</a> · <a href="https://soundcloud.com/ueberrest/54cad3f1-94fa-491f-b5c0-152577a2d140" title="Disturbing Paradise" target="_blank" style="color: #cccccc; text-decoration: none;">Disturbing Paradise</a></div>
-
+      <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+        <a href="https://soundcloud.com/ueberrest" title="Ueberrest" target="_blank" style="color: #cccccc; text-decoration: none;">Ueberrest</a> · 
+        <a href="https://soundcloud.com/ueberrest/54cad3f1-94fa-491f-b5c0-152577a2d140" title="Disturbing Paradise" target="_blank" style="color: #cccccc; text-decoration: none;">Disturbing Paradise</a>
+      </div>
+    </div>
     <div class="card">
       <h3>Spotify Playlist</h3>
       <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6" height="80" frameborder="0" allow="encrypted-media"></iframe>
     </div>
-
   </div>
 </section>
 
@@ -172,15 +202,41 @@
   </div>
 </section>
 
+<!-- NIEUWE SECTIE: Promo Photos -->
+<section id="promo-photos">
+  <h2 class="section-title">Promo Photos for Bookers & Events</h2>
+  <p style="text-align:center; max-width:700px; margin:0 auto 40px; opacity:0.8;">
+    High-quality press photos ready to use for flyers, social media, websites and event promotions.<br>
+    Feel free to download and use them.
+  </p>
+  
+  <div class="promo-photos">
+    <!-- Hier kun je je eigen foto's toevoegen -->
+    <div class="card promo-card">
+      <img src="https://via.placeholder.com/600x800/0a0f1f/00e5ff?text=HYPASUS+Promo+1" alt="HYPASUS Promo Photo 1">
+      <a href="https://via.placeholder.com/600x800/0a0f1f/00e5ff?text=HYPASUS+Promo+1" download="HYPASUS_Promo_1.jpg" class="download-btn">↓ Download</a>
+    </div>
+    
+    <div class="card promo-card">
+      <img src="https://via.placeholder.com/600x800/0a0f1f/00e5ff?text=HYPASUS+Promo+2" alt="HYPASUS Promo Photo 2">
+      <a href="https://via.placeholder.com/600x800/0a0f1f/00e5ff?text=HYPASUS+Promo+2" download="HYPASUS_Promo_2.jpg" class="download-btn">↓ Download</a>
+    </div>
+    
+    <div class="card promo-card">
+      <img src="https://via.placeholder.com/600x800/0a0f1f/00e5ff?text=HYPASUS+Promo+3" alt="HYPASUS Promo Photo 3">
+      <a href="https://via.placeholder.com/600x800/0a0f1f/00e5ff?text=HYPASUS+Promo+3" download="HYPASUS_Promo_3.jpg" class="download-btn">↓ Download</a>
+    </div>
+  </div>
+</section>
+
 <section>
   <h2 class="section-title">Booking</h2>
-  <p>Email: hypasus.nl@gmail.com</p>
-  <a class="btn">Contact</a>
+  <p>Email: <strong>hypasus.nl@gmail.com</strong></p>
+  <a href="mailto:hypasus.nl@gmail.com" class="btn">Send Booking Inquiry</a>
 </section>
 
 <div class="footer">
   © 2026 HYPASUS — All Rights Reserved
 </div>
-
 </body>
 </html>
