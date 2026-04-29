@@ -14,6 +14,7 @@
       overflow-x: hidden;
     }
     h1,h2,h3 { font-family: 'Orbitron', sans-serif; }
+
     section { padding: 80px 10%; position: relative; }
     
     .hero {
@@ -24,12 +25,43 @@
       text-align: center;
       background: radial-gradient(circle at center, rgba(0,229,255,0.15), transparent);
     }
-    .hero h1 {
+
+    .hero-content h1 {
       font-size: 64px;
       letter-spacing: 4px;
       text-shadow: 0 0 20px #00e5ff;
     }
-    .tagline { margin-top: 20px; opacity: 0.8; }
+
+    .tagline { 
+      margin-top: 20px; 
+      opacity: 0.8;
+      font-size: 18px;
+    }
+
+    /* Social icons stijl */
+    .social-icons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .social-icons a {
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons img {
+      width: 48px;
+      height: 48px;
+      filter: brightness(0) invert(1);           /* witte iconen */
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover img {
+      filter: brightness(0) invert(1) drop-shadow(0 0 15px #00e5ff);
+      transform: scale(1.15) translateY(-3px);
+    }
 
     .glow {
       position: absolute;
@@ -78,14 +110,6 @@
       text-align: center;
     }
 
-    .liveframe {
-      background: rgba(255,255,255,0.05);
-      padding: 20px;
-      border-radius: 16px;
-      backdrop-filter: blur(10px);
-      transition: 0.3s;
-      text-align: center;
-    }
     .card:hover {
       transform: translateY(-10px);
       box-shadow: 0 0 20px rgba(0,229,255,0.3);
@@ -154,19 +178,36 @@
 
     @media(max-width: 900px) {
       .about { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 42px; }
+      .hero-content h1 { font-size: 42px; }
+      .social-icons { gap: 25px; }
+      .social-icons img { width: 42px; height: 42px; }
     }
   </style>
 </head>
 <body>
+
 <div class="glow" style="top:10%; left:20%"></div>
 <div class="glow" style="bottom:10%; right:20%"></div>
 
 <section class="hero">
-  <div>
+  <div class="hero-content">
     <h1>HYPASUS</h1>
     <p class="tagline">Future rave energy — built for peak time</p>
-    <a href="#music" class="btn">Listen Now</a>
+    
+    <!-- 3 Social Icons -->
+    <div class="social-icons">
+      <a href="https://soundcloud.com/hypasus" target="_blank" title="SoundCloud">
+        <img src="https://rose-characteristic-koala-124.mypinata.cloud/ipfs/bafkreice7g5v7zccsdjqnzd7wxorqgmgq33oqgp3rwec7hyfcpimpjsc4i" alt="SoundCloud">
+      </a>
+      <a href="https://open.spotify.com/artist/YOUR_SPOTIFY_LINK_HIER" target="_blank" title="Spotify">
+        <img src="https://rose-characteristic-koala-124.mypinata.cloud/ipfs/bafkreicfhuyg34o2nrba6xouoxbcnng64qtd2p56spv4klnfjotp27kpee" alt="Spotify">
+      </a>
+      <a href="https://www.instagram.com/hypasusmusic/" target="_blank" title="Instagram">
+        <img src="https://rose-characteristic-koala-124.mypinata.cloud/ipfs/bafkreie6vh5z7dug5flzcsf6bcsyrz3ahwsatjaq5zazvfgd7lwwetctjy" alt="Instagram">
+      </a>
+    </div>
+
+    <a href="#music" class="btn" style="margin-top: 50px;">Listen Now</a>
   </div>
 </section>
 
@@ -181,8 +222,8 @@
   </div>
 </section>
 
-  <section id="music">
-    <h2 class="section-title">Latest Music -Placeholders for now since i haven't released anything yet-</h2>
+<section id="music">
+  <h2 class="section-title">Latest Music + placeholders</h2>
   <div class="music">
     <div class="card">
       <h3>Spotify Release</h3>
@@ -190,10 +231,10 @@
     </div>
     <div class="card">
       <h3>SoundCloud Track</h3>
-      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2289213842&color=%23545c68&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2311478576&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"></iframe>
       <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-        <a href="https://soundcloud.com/ueberrest" title="Ueberrest" target="_blank" style="color: #cccccc; text-decoration: none;">Ueberrest</a> · 
-        <a href="https://soundcloud.com/ueberrest/54cad3f1-94fa-491f-b5c0-152577a2d140" title="Disturbing Paradise" target="_blank" style="color: #cccccc; text-decoration: none;">Disturbing Paradise</a>
+        <a href="https://soundcloud.com/hypasus" title="HYPASUS" target="_blank" style="color: #cccccc; text-decoration: none;">HYPASUS</a> · 
+        <a href="https://soundcloud.com/hypasus/hypasus-dead-man-walking-1" title="HYPASUS - Dead man walking (Remix)" target="_blank" style="color: #cccccc; text-decoration: none;">HYPASUS - Dead man walking (Remix)</a>
       </div>
     </div>
     <div class="card">
@@ -230,17 +271,15 @@
   </div>
 </section>
 
-<!-- NIEUWE SECTIE: Promo Photos -->
+<!-- Promo Photos -->
 <section id="promo-photos">
   <h2 class="section-title">Promo Photos for Bookers & Events</h2>
   <p style="text-align:center; max-width:700px; margin:0 auto 40px; opacity:0.8;">
     High-quality press photos ready to use for flyers, social media, websites and event promotions.<br>
-
     Feel free to download and use them.
   </p>
   
   <div class="promo-photos">
-    <!-- Hier kun je je eigen foto's toevoegen -->
     <div class="card promo-card">
       <img src="https://gold-joint-warbler-618.mypinata.cloud/ipfs/bafybeibwsbsbntg6hlwkypvfcsn7xt7cguyi5pibluxkh3shq32y3x3ica" alt="HYPASUS Promo Photo 1">
       <a href="https://gold-joint-warbler-618.mypinata.cloud/ipfs/bafybeibwsbsbntg6hlwkypvfcsn7xt7cguyi5pibluxkh3shq32y3x3ica" download="HYPASUS_Promo_1.jpg" class="download-btn">↓ Download</a>
